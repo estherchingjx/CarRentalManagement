@@ -2,13 +2,20 @@
 @inject HttpClient _client
 @inject IJSRuntime js
 @attribute [Authorize]
-  
+
 <h3 class="card-title">Car Makes</h3>
+<br />
+<a href="/makes/create" class="btn btn-secondary">
+    <span class="oi oi-plus"></span>
+    Create New Make
+</a>
+<br />
+<br />
 
 @if (Makes == null)
- {
+{
     <div class="alert alert-info">Loading Makes...</div>
- }
+}
 
 else
 {
@@ -21,7 +28,7 @@ else
         </thead>
         <tbody>
             @foreach (var make in Makes)
-             {
+            {
                 <tr>
                     <td>@make.Name</td>
                     <td>
@@ -36,7 +43,7 @@ else
                         </button>
                     </td>
                 </tr>
-                }
+            }
         </tbody>
     </table>
 }
